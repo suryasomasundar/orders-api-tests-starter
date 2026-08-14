@@ -4,6 +4,9 @@ import { BASE_URL } from "../config.js";
 
 // The traditional way: point at the API by hand (config.js) and write the
 // assertions yourself. Two calls, one GET and one POST. Run with:  npm test
+//
+// Each test logs the actual response so you can SEE what the API sent back,
+// not just a green check.
 
 // GET: read the menu.
 test("GET /api/menu returns items", async () => {
@@ -11,6 +14,9 @@ test("GET /api/menu returns items", async () => {
   assert.equal(res.status, 200);
 
   const body = await res.json();
+  console.log("\nGET /api/menu ->", res.status);
+  console.log(JSON.stringify(body, null, 2));
+
   assert.ok(body.items.length > 0, "menu should not be empty");
 });
 
@@ -28,5 +34,8 @@ test("POST /api/orders creates an order", async () => {
   assert.equal(res.status, 201);
 
   const order = await res.json();
+  console.log("\nPOST /api/orders ->", res.status);
+  console.log(JSON.stringify(order, null, 2));
+
   assert.ok(order.id, "created order should have an id");
 });
