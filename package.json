@@ -1,0 +1,12 @@
+{
+  "name": "orders-api-tests-starter",
+  "version": "1.0.0",
+  "description": "Bare starter for writing API tests by hand against the Orders API.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
