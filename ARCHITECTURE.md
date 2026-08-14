@@ -153,24 +153,9 @@ test("rejects a lowercase size and a string fulfillment with 422", async () => {
 
 ## Standards
 
-**Naming**
-- Files: `<resource>.client.js`, `<resource>.builder.js`, `<resource>.test.js`.
-- Tests describe behaviour, not endpoints: "rejects a lowercase size with 422",
-  not "test POST orders".
-
-**Assertions**
-- Assert on the response body, not just the status code.
-- Assert derived values (for example `totalCents`), not just that a field exists.
-
-**Error handling**
-- Every endpoint that validates input has at least one negative test.
-- Cover each documented validation rule once (uppercase size, nested
-  fulfillment, required fields, unknown menu id, quantity >= 1).
-- Assert the error is actionable: it names the field and carries a hint.
-
-**Independence**
-- Tests do not depend on how many orders exist or on another test running first.
-  The server is shared. A test creates the data it needs.
+The rules for what a good test looks like (naming, assertions, error handling,
+coverage, independence) live in their own document: see `STANDARDS.md`. This
+document is about structure; that one is about judgment.
 
 ## Who may do what
 
