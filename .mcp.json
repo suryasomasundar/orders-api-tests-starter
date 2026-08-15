@@ -7,6 +7,13 @@
         "API_BASE_URL": "https://orders-api-workshop.onrender.com",
         "OPENAPI_SPEC_PATH": "https://orders-api-workshop.onrender.com/openapi.json"
       }
+    },
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "headers": {
+        "Authorization": "Bearer ${GITHUB_PERSONAL_ACCESS_TOKEN}"
+      }
     }
   }
 }
