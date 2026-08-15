@@ -1,0 +1,57 @@
+{
+  "run": {
+    "id": "ci_20260814_1042",
+    "branch": "add-order-tests",
+    "commit": "a1b2c3d",
+    "startedAt": "2026-08-14T10:42:00.000Z",
+    "status": "failed",
+    "totals": { "tests": 19, "passed": 14, "failed": 5, "durationMs": 48213 }
+  },
+  "failures": [
+    {
+      "test": "creates an order when the body is valid",
+      "file": "tests/orders.test.js",
+      "error": "AssertionError: expected 201 but got 422",
+      "response": {
+        "error": "validation_failed",
+        "violations": [
+          { "field": "fulfillment.scheduledFor", "code": "invalid_format", "received": "2026-08-11T18:30:00.000Z", "hint": "scheduledFor must be a future date-time." }
+        ]
+      }
+    },
+    {
+      "test": "creates an order with DELIVERY fulfillment",
+      "file": "tests/orders.test.js",
+      "error": "AssertionError: expected 201 but got 422",
+      "response": {
+        "error": "validation_failed",
+        "violations": [
+          { "field": "fulfillment.scheduledFor", "code": "invalid_format", "received": "2026-08-11T18:30:00.000Z", "hint": "scheduledFor must be a future date-time." }
+        ]
+      }
+    },
+    {
+      "test": "returns the created order when read back by id",
+      "file": "tests/orders.test.js",
+      "error": "AssertionError: expected 201 but got 422",
+      "response": {
+        "error": "validation_failed",
+        "violations": [
+          { "field": "fulfillment.scheduledFor", "code": "invalid_format", "received": "2026-08-11T18:30:00.000Z", "hint": "scheduledFor must be a future date-time." }
+        ]
+      }
+    },
+    {
+      "test": "creates an order with the correct total",
+      "file": "tests/orders.test.js",
+      "error": "AssertionError: expected totalCents 1095 but got 2190",
+      "note": "Order was created (201). Only the total is wrong. A LARGE burrito now costs 2x."
+    },
+    {
+      "test": "lists all orders",
+      "file": "tests/menu.test.js",
+      "error": "TypeError: fetch failed - 503 Service Unavailable",
+      "note": "Single occurrence. Passed on the previous run. Response time 30084ms before the 503."
+    }
+  ]
+}

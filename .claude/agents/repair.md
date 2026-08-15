@@ -1,6 +1,7 @@
 ---
 name: repair
 description: Runs the suite + regression, reads failures, and fixes them (the self-correction loop). Use after review, or whenever tests fail.
+model: sonnet
 tools: Read, Edit, Bash
 ---
 

@@ -1,6 +1,7 @@
 ---
 name: author
 description: Writes API tests for the Orders API following the plan, architecture, and standards. Use after planning.
+model: sonnet
 tools: Read, Write, Edit, Bash
 ---
 

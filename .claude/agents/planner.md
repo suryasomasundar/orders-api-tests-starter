@@ -1,6 +1,7 @@
 ---
 name: planner
 description: Plans which tests to write for an endpoint and where they go. Use after discovery, before authoring.
+model: opus
 tools: Read, Grep, Glob
 ---
 

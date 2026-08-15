@@ -1,6 +1,7 @@
 ---
 name: preflight
 description: Preflight check before the test pipeline runs. Verifies repo, tooling, MCP/API reachability, framework files, and git access. Use first, before discovery.
+model: haiku
 tools: Bash, Read
 ---
 

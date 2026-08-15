@@ -1,6 +1,7 @@
 ---
 name: reviewer
 description: Independently reviews generated tests against STANDARDS.md. Reports violations; does not edit tests. Use after authoring, before repair.
+model: opus
 tools: Read, Grep, Glob
 ---
 

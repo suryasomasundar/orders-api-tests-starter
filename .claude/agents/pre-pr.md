@@ -1,6 +1,7 @@
 ---
 name: pre-pr
 description: Prepares a pull request (diff, final checks, draft title/body). Does NOT push or open the PR without human approval. Optional finale.
+model: haiku
 tools: Bash, Read
 ---
 

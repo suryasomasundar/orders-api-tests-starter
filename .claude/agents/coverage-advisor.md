@@ -1,6 +1,7 @@
 ---
 name: coverage-advisor
 description: Reviews current coverage against the API contract and suggests missing tests. Advisory only. Use after the suite is green.
+model: sonnet
 tools: Read, Grep, Glob
 ---
 
