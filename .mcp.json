@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "orders-api": {
+      "command": "npx",
+      "args": ["-y", "@ivotoby/openapi-mcp-server"],
+      "env": {
+        "API_BASE_URL": "https://orders-api-workshop.onrender.com",
+        "OPENAPI_SPEC_PATH": "https://orders-api-workshop.onrender.com/openapi.json"
+      }
+    }
+  }
+}
