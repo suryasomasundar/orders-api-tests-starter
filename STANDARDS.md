@@ -86,6 +86,10 @@ A suite that only tests the happy path is not done, no matter how green it is.
 - A test creates the data it needs, using a builder or fixture.
 - No hardcoded URLs. The base URL comes from `config.js`.
 - No invented data. Use real menu ids discovered from `GET /api/menu`.
+- The API is live and writes are real: order ids are global and increment on a
+  shared server. Never assert on an absolute id (`ord_1010`) or on a total order
+  count. Assert on the shape and the values you sent, and read back by the id the
+  response gave you.
 
 ## The bar, in one line
 
