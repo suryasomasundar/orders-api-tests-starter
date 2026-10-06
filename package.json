@@ -4,7 +4,8 @@
   "description": "Bare starter for writing API tests by hand against the Orders API.",
   "type": "module",
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "cost": "node scripts/cost-report.mjs"
   },
   "engines": {
     "node": ">=20"

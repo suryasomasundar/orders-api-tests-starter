@@ -13,3 +13,14 @@ export const reasonableButWrong = {
   items: [{ menuItemId: "burrito", quantity: 1, size: "medium" }],
   fulfillment: "pickup",
 };
+
+// GET /api/menu: strict UPPERCASE enum, case-sensitive, not normalized.
+export const menuCategories = ["ENTREE", "SIDE", "DRINK"];
+
+// A known, live-verified menu item used to assert real values (not just shape).
+export const knownMenuItem = {
+  id: "burrito",
+  name: "Burrito",
+  priceCents: 1095,
+  category: "ENTREE",
+};

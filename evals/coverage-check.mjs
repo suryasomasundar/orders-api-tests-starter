@@ -36,13 +36,17 @@ const rules = [
   ["non-ISO scheduledFor", [/fulfillment\.scheduledFor/, /non-?ISO/i, /invalid[^\n]*scheduledFor/i, /withScheduledFor\(/]],
 ];
 
-const testCount = (src.match(/\btest\s*\(/g) || []).length;
+// Split the file into test blocks and keep only the negative ones (those that
+// expect a 422). Otherwise a happy-path test that merely mentions a field, like
+// `quantity: 2` or `body.items[0].size`, would count as covering that rule.
+const blocks = src.split(/(?=\btest\s*\()/).slice(1);
+const negative = blocks.filter((b) => /\b422\b/.test(b));
 let covered = 0;
 const missing = [];
 
-console.log(`Coverage check: ${file}  (${testCount} test blocks)\n`);
+console.log(`Coverage check: ${file}  (${blocks.length} tests, ${negative.length} expect 422)\n`);
 for (const [name, signals] of rules) {
-  const ok = signals.some((re) => re.test(src));
+  const ok = negative.some((b) => signals.some((re) => re.test(b)));
   console.log(`${ok ? "[ok]  " : "[MISS]"} ${name}`);
   ok ? covered++ : missing.push(name);
 }
